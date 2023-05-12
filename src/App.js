@@ -1,11 +1,10 @@
-import React from 'react';
+import Pages from "./pages/Pages";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello</h1>
-      </header>
+      <h1>Hello</h1>
+      <Pages />
     </div>
   );
 }
