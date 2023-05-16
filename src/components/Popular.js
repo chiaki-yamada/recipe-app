@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 function Popular() {
   const [popular, setPopluar] = useState([]);
@@ -13,14 +15,37 @@ function Popular() {
     setPopluar(data.recipes);
   }
   return (
-    <div>
-      {popular.map((recipe) => {
-        return (
-          <div key={recipe.id}>
-            <p>{recipe.title}</p>
-          </div>
-        )
-      })}
+    <div className='wrapper'>
+      <h3>Popular Picks</h3>
+
+      <Splide options={{
+        gap: '1rem',
+        perPage: 4,
+        breakpoints: {
+          640: {
+            perPage: 1,
+          },
+          768: {
+            perPage: 2,
+          },
+          1024: {
+            perPage: 3,
+          },
+        }
+      }}>
+
+        {popular.map((recipe) => {
+          return (
+            <SplideSlide>
+              <div className='card'>
+                <p>{recipe.title}</p>
+                <img className='card-img' src={recipe.image} alt={recipe.title} />
+              </div>
+            </SplideSlide>
+          );
+        })}
+      </Splide>
+
     </div>
   )
 }
