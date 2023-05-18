@@ -16,11 +16,19 @@ function Cuisine() {
     console.log(params.cuisine);
   }, [params.cuisine]);
 
-
-
-
   return (
-    <div>Cuisine</div>
+    <div className='wrapper'>
+      <div className='cuisine'>
+        {cuisine.map((item) => {
+          return (
+            <div className='cuisine-card' key={item.id}>
+              <img className='cuisine-img' src={item.image} alt={item.title} />
+              <h4 className='cuisine-title'>{item.title}</h4>
+            </div>
+          )
+        })}
+      </div>
+    </div>
   )
 }
 
