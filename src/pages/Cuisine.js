@@ -18,12 +18,12 @@ function Cuisine() {
 
   return (
     <div className='wrapper'>
-      <div className='cuisine'>
+      <div className='grid'>
         {cuisine.map((item) => {
           return (
-            <div className='cuisine-card' key={item.id}>
-              <img className='cuisine-img' src={item.image} alt={item.title} />
-              <h4 className='cuisine-title'>{item.title}</h4>
+            <div key={item.id}>
+              <img className='sorted-img' src={item.image} alt={item.title} />
+              <h4 className='sorted-title'>{item.title}</h4>
             </div>
           )
         })}
