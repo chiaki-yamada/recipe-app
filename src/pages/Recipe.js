@@ -21,10 +21,11 @@ function Recipe() {
 
   return (
     <div className="detail-wrapper">
-      <div>
+      <div className="detail-img">
         <h2>{details.title}</h2>
         <img src={details.image} alt={details.title} />
       </div>
+      
       <div className="detail-info">
         <button className={activeTab === "instructions" ? 'active' : ''} onClick={() => setActiveTab("instructions")}>Instructions</button>
         <button className={activeTab === "ingredients" ? 'active' : ''} onClick={() => setActiveTab("ingredients")}>Ingredients</button>
