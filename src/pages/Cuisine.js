@@ -22,8 +22,10 @@ function Cuisine() {
         {cuisine.map((item) => {
           return (
             <div key={item.id}>
-              <img className='sorted-img' src={item.image} alt={item.title} />
-              <h4 className='sorted-title'>{item.title}</h4>
+              <Link to={"/recipe/" + item.id}>
+                <img className='sorted-img' src={item.image} alt={item.title} />
+                <h4 className='sorted-title'>{item.title}</h4>
+              </Link>
             </div>
           )
         })}

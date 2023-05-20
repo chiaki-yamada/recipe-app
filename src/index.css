@@ -44,6 +44,7 @@
 }
 
 /* Search */
+
 .search {
   width: 50%;
   position: relative;
@@ -126,4 +127,26 @@ a:hover {
 .sorted-title {
   text-align: center;
   padding: 0.5rem;
+}
+
+/* recipe details */
+.detail-wrapper {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  display: flex;
+}
+.detail-wrapper h2 {
+  margin-bottom: 2rem;
+}
+button {
+  padding: 0.8rem 1rem;
+  color: #fc8200;
+  background: white;
+  border: 2px solid #fc8200;
+  margin-right: 10px;
+  font-weight: 600;
+}
+.active {
+  background: #fc8200;
+  color: white;
 }
