@@ -2,6 +2,8 @@ import { GiTacos, GiChopsticks, GiPretzel } from 'react-icons/gi'
 import { CiPizza } from 'react-icons/ci'
 import { NavLink } from 'react-router-dom'
 
+
+
 function Category() {
   return (
     <div className='category'>
