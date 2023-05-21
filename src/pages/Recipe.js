@@ -32,7 +32,7 @@ function Recipe() {
 
         {activeTab === "instructions" && (
           <div className="recipe-detail">
-            <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
+            <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
           </div>
         )}
         {activeTab === "ingredients" && (
