@@ -1,5 +1,6 @@
 import Veggie from "../components/Veggie";
 import Popular from "../components/Popular";
+import Desert from "../components/Desert";
 
 import React from 'react'
 
@@ -8,6 +9,7 @@ function Home() {
     <div>
       <Veggie />
       <Popular />
+      <Desert />
     </div>
   )
 }
