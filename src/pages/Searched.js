@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 
 function Searched() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
+
   let params = useParams();
 
   const getSearched = async (name) => {
@@ -19,24 +20,25 @@ function Searched() {
   }, [params.search]);
 
 
-  return (
-    <div className='wrapper'>
-      <div className='grid'>
-        {searchedRecipes.map((item) => {
-          return (
-            <div key={item.id}>
-              <Link to={"/recipe/" + item.id}>
-                <img className='sorted-img' src={item.image} alt={item.title} />
-                <h4 className='sorted-title'>{item.title}</h4>
-              </Link>
-            </div>
-          )
-        })}
+
+    return (
+      <div className='wrapper'>
+        <div className='grid'>
+          {searchedRecipes.map((item) => {
+            return (
+              <div key={item.id}>
+                <Link to={"/recipe/" + item.id}>
+                  <img className='sorted-img' src={item.image} alt={item.title} />
+                  <h4 className='sorted-title'>{item.title}</h4>
+                </Link>
+              </div>
+            )
+          })}
+        </div>
       </div>
-    </div>
 
-  )
-}
+    )
+  }
 
-export default Searched
+  export default Searched
 
