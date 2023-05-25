@@ -1,42 +1,28 @@
-import React from 'react'
 import { useEffect, useState } from 'react'
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-
-function Veggie() {
-  const [veggie, setVeggie] = useState([]);
+function Dessert() {
+  const [dessert, setDessert] = useState([]);
 
   useEffect(() => {
-    getVeggie();
+    getDessert();
   }, []);
 
-  const getVeggie = async () => {
-  
-      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=vegetarian&number=10`);
+  const getDessert = async () => {
+      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=dessert&number=10`);
       const data = await api.json();
-
-      setVeggie(data.recipes);
+      setDessert(data.recipes);
       console.log(data.recipes);
-    
-    // const check = localStorage.getItem('veggie');
-    // if (check) {
-    //   setVeggie(JSON.parse(check));
-    // } else {
-    //   const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=vegetarian&number=10`);
-    //   const data = await api.json();
 
-    //   localStorage.setItem('veggie', JSON.stringify(data.recipes));
-    //   setVeggie(data.recipes);
-    //   console.log(data.recipes);
-    // }
+    
   };
 
 
   return (
     <div className='wrapper'>
-      <h3>Vegetarian Picks</h3>
+      <h3>Dessert Picks</h3>
 
       <Splide options={{
         gap: '1rem',
@@ -54,7 +40,7 @@ function Veggie() {
           },
         }
       }}>
-        {veggie.map((recipe) => {
+        {dessert.map((recipe) => {
           return (
             <SplideSlide key={recipe.id}>
               <div className='card'>
@@ -72,4 +58,4 @@ function Veggie() {
   )
 }
 
-export default Veggie;
+export default Dessert;

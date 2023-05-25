@@ -11,20 +11,27 @@ function Popular() {
   }, []);
 
   const getPopular = async () => {
-    const check = localStorage.getItem('popular');
-    if (check) {
-      setPopluar(JSON.parse(check));
-    } else {
-      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}`);
+    
+      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=popular&number=10`);
       const data = await api.json();
+      console.log(data);
 
-      localStorage.setItem('popular', JSON.stringify(data.recipes));
       setPopluar(data.recipes);
       console.log(data.recipes);
 
-    }
-  };
+    // const check = localStorage.getItem('popular');
+    // if (check) {
+    //   setPopluar(JSON.parse(check));
+    // } else {
+    //   const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=popular&number=10`);
+    //   const data = await api.json();
 
+    //   localStorage.setItem('popular', JSON.stringify(data.recipes));
+    //   setPopluar(data.recipes);
+    //   console.log(data.recipes);
+
+    // }
+  };
 
   return (
     <div className='wrapper'>
