@@ -1,5 +1,5 @@
 import Veggie from "../components/Veggie";
-import Popular from "../components/Popular";
+import Pescatarian from "../components/Pescatarian";
 import Dessert from "../components/Dessert";
 import React from 'react'
 
@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <Veggie />
-      <Popular />    
+      <Pescatarian />    
       <Dessert />
   
     </div>

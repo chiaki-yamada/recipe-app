@@ -3,20 +3,20 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Link } from 'react-router-dom';
 
-function Popular() {
-  const [popular, setPopluar] = useState([]);
+function Pescatarian() {
+  const [pescatarian, setPescatarian] = useState([]);
 
   useEffect(() => {
-    getPopular();
+    getPescatarian();
   }, []);
 
-  const getPopular = async () => {
+  const getPescatarian = async () => {
     
-      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=popular&number=10`);
+      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&tags=pescatarian&number=10`);
       const data = await api.json();
       console.log(data);
 
-      setPopluar(data.recipes);
+      setPescatarian(data.recipes);
       console.log(data.recipes);
 
     // const check = localStorage.getItem('popular');
@@ -35,7 +35,7 @@ function Popular() {
 
   return (
     <div className='wrapper'>
-      <h3>Popular Picks</h3>
+      <h3>Pescatarian Picks</h3>
 
       <Splide options={{
         gap: '1rem',
@@ -53,7 +53,7 @@ function Popular() {
           },
         }
       }}>
-        {popular.map((recipe) => {
+        {pescatarian.map((recipe) => {
           return (
             <SplideSlide key={recipe.id}>
               <div className='card'>
@@ -71,4 +71,4 @@ function Popular() {
   )
 }
 
-export default Popular;
+export default Pescatarian;
